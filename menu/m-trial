@@ -1,0 +1,81 @@
+#/bin/bash
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# System Request : Debian 9+/Ubuntu 18.04+/20+
+# Develovers » ReeMods
+# Email      » retslavmods@gmail.com
+# telegram   » https://t.me/ReeMods
+# whatsapp   » wa.me/+6281255378890
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# ReeMods
+
+RED="\033[31m"
+NC='\e[0m'
+GREEN='\033[0;32m'
+ORANGE='\033[0;33m'
+YELL='\033[0;33m'
+BGWHITE='\e[0;100;37m'
+
+ipsaya=$(curl -sS ipv4.icanhazip.com)
+data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+date_list=$(date +"%Y-%m-%d" -d "$data_server")
+data_ip="https://raw.githubusercontent.com/BjhonStore/Autoscript-tunneling-premium/main/register"
+checking_sc() {
+  useexp=$(wget -qO- $data_ip | grep $ipsaya | awk '{print $3}')
+  if [[ $date_list < $useexp ]]; then
+    echo -ne
+  else
+    echo -e "\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\033[42m          404 NOT FOUND AUTOSCRIPT          \033[0m"
+    echo -e "\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e ""
+    echo -e "            ${RED}PERMISSION DENIED !${NC}"
+    echo -e "   \033[0;33mYour VPS${NC} $ipsaya \033[0;33mHas been Banned${NC}"
+    echo -e "     \033[0;33mBuy access permissions for scripts just 1 usd 2ip ${NC}"
+    echo -e "             \033[0;33mContact Admin :${NC}"
+    echo -e "      ${GREEN}telegram${NC} https://t.me/BjhonStore"
+    echo -e "\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    exit 0
+  fi
+}
+checking_sc
+clear
+
+echo -e ""
+echo -e " ${NC} ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓${NC}"
+echo -e " ${NC}  ${BGWHITE}               MENU MANAGER TRIAL               ${NC}"
+echo -e " ${NC} ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛${NC}"
+echo -e " ${NC} ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓${NC}"
+echo -e " ${NC}   ${NC}[${GREEN}01${NC}]${YELL} Trial Account SSH & OVPN${NC}"
+echo -e " ${NC}   ${NC}[${GREEN}02${NC}]${YELL} Trial Account XRAY SS WS/GRPC${NC}"
+echo -e " ${NC}   ${NC}[${GREEN}03${NC}]${YELL} Trial Account XRAY TR WS/GRPC${NC}"
+echo -e " ${NC}   ${NC}[${GREEN}04${NC}]${YELL} Trial Account XRAY VLESS WS/GRPC${NC}"
+echo -e " ${NC}   ${NC}[${GREEN}05${NC}]${YELL} Trial Account XRAY VMESS WS/GRPC${NC}"
+echo -e " ${NC}   ${NC}[${RED}0X${NC}]${RED} ComeBack Menu${NC}"
+echo -e " ${NC} ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛${NC}"
+echo -e ""
+read -p "  Select From Options [ 1-5 / 0X ] »» " menu
+
+case $menu in
+1 | 01) clear ; checking_sc ;
+    trial
+    ;;
+2 | 02) clear ; checking_sc ;
+    trialss
+    ;;
+3 | 03) clear ; checking_sc ;
+    trialtr
+    ;;
+4 | 04) clear ; checking_sc ;
+    trialvless
+    ;;
+5 | 05) clear ; checking_sc ;
+    trialws
+    ;;
+0 | 00 | x | X | 0x | 0X)
+    clear
+    menu
+    ;;      
+*)
+    m-trial
+    ;;
+esac

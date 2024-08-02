@@ -1,0 +1,119 @@
+#/bin/bash
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# System Request : Debian 9+/Ubuntu 18.04+/20+
+# Develovers » BjhonStore
+# Email      » BjhonStore@gmail.com
+# telegram   » https://t.me/BjhonStore
+# whatsapp   » wa.me/+6282116211399
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# BjhonStore
+
+RED="\033[31m"
+YELLOW="\033[33m"
+NC='\e[0m'
+YELL='\033[0;33m'
+BRED='\033[1;31m'
+GREEN='\033[0;32m'
+ORANGE='\033[33m'
+BGWHITE='\e[0;100;37m'
+
+rm -rf /root/log-limit.txt
+touch /root/log-limit.txt
+clear
+Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
+Info="${Green_font_prefix}ON${Font_color_suffix}"
+Error="${Red_font_prefix}OFF${Font_color_suffix}"
+cek=$(grep -c -E "^# Autokill" /etc/cron.d/tendang)
+if [[ "$cek" = "1" ]]; then
+sts="${Info}"
+else
+sts="${Error}"
+fi
+clear
+echo -e ""
+echo -e " ${NC} ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓${NC}"
+echo -e " ${NC}   ${NC}» Status Autokill $sts "
+echo -e " ${NC} ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛${NC}"
+echo -e " ${NC} ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓${NC}"
+echo -e " ${NC}   ${NC}[${GREEN}01${NC}]${YELL} AutoKill After 1 Minutes"
+echo -e " ${NC}   ${NC}[${GREEN}02${NC}]${YELL} AutoKill After 2 Minutes"
+echo -e " ${NC}   ${NC}[${GREEN}03${NC}]${YELL} AutoKill After 3 Minutes"
+echo -e " ${NC}   ${NC}[${GREEN}04${NC}]${YELL} Turn Off AutoKill/MultiLogin"
+echo -e " ${NC}   ${NC}[${RED}0X${NC}]${RED} Exit"
+echo -e " ${NC} ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛${NC}"                                                                                          
+echo -e ""
+read -p "  Select From Options [ 1-4 / 0X ] »» " AutoKill
+echo -e ""
+case $AutoKill in
+                1)
+                echo -e ""
+                read -p "  Multilogin Maximum Number Of Allowed: " max
+                sleep 1
+                clear
+                echo > /etc/cron.d/tendang
+                echo "# Autokill" >>/etc/cron.d/tendang
+                echo "*/1 * * * *  root /usr/sbin/tendang $max" >>/etc/cron.d/tendang
+                echo -e ""
+                echo -e "\033[1;93m┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\033[0m"
+                echo -e ""
+                echo -e "      Allowed MultiLogin : $max"
+                echo -e "      AutoKill Every     : 1 Minutes"      
+                echo -e ""
+                echo -e "\033[1;93m┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\033[0m"
+                read -n 1 -s -r -p "Press [ Enter ] to back on menu"
+                autokill                                
+                ;;
+                2)
+                echo -e ""
+                read -p "  Multilogin Maximum Number Of Allowed: " max
+                sleep 1
+                clear
+                echo > /etc/cron.d/tendang
+                echo "# Autokill" >>/etc/cron.d/tendang
+                echo "*/2 * * * *  root /usr/sbin/tendang $max" >>/etc/cron.d/tendang
+                echo -e ""
+                echo -e "\033[1;93m┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\033[0m"
+                echo -e ""
+                echo -e "        Allowed MultiLogin : $max"
+                echo -e "        AutoKill Every     : 2 Minutes"
+                echo -e ""
+                echo -e "\033[1;93m┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\033[0m"
+                read -n 1 -s -r -p "Press [ Enter ] to back on menu"
+                autokill
+                ;;
+                3)
+                echo -e ""
+                read -p "  Multilogin Maximum Number Of Allowed: " max
+                sleep 1
+                clear
+                echo > /etc/cron.d/tendang
+                echo "# Autokill" >>/etc/cron.d/tendang
+                echo "*/3 * * * *  root /usr/sbin/tendang $max" >>/etc/cron.d/tendang
+                echo -e ""
+                echo -e "\033[1;93m┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\033[0m"
+                echo -e ""
+                echo -e "        Allowed MultiLogin : $max"
+                echo -e "        AutoKill Every     : 3 Minutes"
+                echo -e ""
+                echo -e "\033[1;93m┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\033[0m"
+                read -n 1 -s -r -p "Press [ Enter ] to back on menu"
+                autokill
+                ;;
+                4)
+                clear
+                echo > /etc/cron.d/tendang
+                echo -e ""
+                echo -e "\033[1;93m┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\033[0m"
+                echo -e ""
+                echo -e "        AutoKill MultiLogin Turned Off  "
+                echo -e ""
+                echo -e "\033[1;93m┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\033[0m"
+                read -n 1 -s -r -p "Press [ Enter ] to back on menu"
+                autokill
+                ;;
+                0 | 00 | x | X | 0x | 0X)
+                clear
+                menu
+                ;;
+        esac
+        
