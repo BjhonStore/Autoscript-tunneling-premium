@@ -12,9 +12,13 @@
 <font color='red'><b> ⪼⪼ MELANGGAR = BANNED! ⪻⪻ </b></font><br>
 <font color="#0a00ff">┏━━━━━━━━━━━━━━━━━━━━━┓</b></font><br><font color="#ffff00"><b> Admin : https://wa.link/p1t6ke</b></font><br><font color="#ffff00"><b> Admin : https://wa.link/hdi8gk</b></font><br> <font color="#0a00ff">┗━━━━━━━━━━━━━━━━━━━━━┛</br></font>
 
-## Upgrade For Debian
+## Update & Upgrade For Debian
 ```
 apt update -y && apt upgrade -y && apt dist-upgrade -y && reboot
+```
+## Update & Upgrade For Ubuntu 
+```
+apt update && apt upgrade -y && update-grub && sleep 2 && reboot
 ```
 ## INSTALL SCRIPT 
 Masukkan perintah dibawah untuk menginstall Autoscript Premium
